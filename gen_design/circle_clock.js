@@ -269,7 +269,7 @@ function keyPressed() {
 
   }
   else if (key == 's' || key == 'S') {
-    saveCanvas('honza_rychly_abstract_clock_.png');
+    saveCanvas('abstract_clock.png');
   }
   if (key == 'm' || key == 'M') {
     console.log("changing mode: ", mode + 1, " -> ", (mode + 1) % 3 + 1);

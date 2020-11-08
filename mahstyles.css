@@ -1,0 +1,78 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    justify-content: center;
+
+    font-family: Calibri, 'Gill Sans', 'Trebuchet MS', sans-serif;
+    background: rgb(54, 65, 89);
+}
+header {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: expanded;
+    /* text-shadow: black 10; TODO */
+    color:rgb(107, 118, 143);
+}
+section {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    background: rgb(54, 65, 89);
+}
+h2 {
+    margin: 0px;
+    padding: 0px;
+    width: 230px;
+    height: 35;
+    display: inline;
+    text-align: left;
+
+    color: rgb(107, 118, 143);
+    font-weight: normal;
+}
+h3 {
+    margin: 0px;
+    padding: 7px 0px 0px 0px;
+    width: 450px;
+    height: 35;
+    display: inline;
+    text-align: right;
+
+    color: rgb(107, 118, 143);
+    font-weight: lighter;
+}
+h4 {
+    margin: 0px;
+    padding: 7px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+
+    color: rgb(107, 118, 143);
+    font-weight: lighter;
+}
+div {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+footer {
+    margin: 0px;
+    padding: 50px 0px 30px;
+    text-align: center;
+
+    color: rgb(107, 118, 143);
+}
+ul {
+    list-style-type: none;
+}
+a {
+    color:rgb(77, 87, 112)
+}

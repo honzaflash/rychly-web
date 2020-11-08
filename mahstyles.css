@@ -1,36 +1,44 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0px;
     padding: 0px;
+    min-height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     
     font-family: Calibri, 'Gill Sans', 'Trebuchet MS', sans-serif;
-    background: rgb(14, 47, 13);
+    color: rgb(173, 255, 170);
+    background: rgb(25, 59, 25);
 }
 main {
     margin: 0px;
     padding: 0px;
+    padding-bottom: auto;
     display: flex;
+    flex-grow: 1;
+    
+    
     width: min-content;
-    min-height: auto;
-    /* make it so that the footer is always at the bottom */
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-self: center;
 
-    background: rgb(66, 87, 64);
+    background: rgb(32, 34, 32);
 }
 header {
-    margin: 0px 0px 10px 0px;
+    margin: 0px;
     padding: 0px 0px 5px 0px;
     display: flex;
     justify-content: center;
-    background: rgb(13, 160, 0);
+    background: rgb(0, 0, 0);
     
     font-size: 40px;
     font-weight: bold;
     font-stretch: expanded;
-    /* text-shadow: black 10; TODO */
-    color:rgb(196, 238, 169);
+    color:rgb(48, 199, 43);
 }
 div {
     margin: 0px;
@@ -44,16 +52,19 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: right;
-    background: rgb(63, 126, 102);
-    box-shadow: 3px 3px 5px #00000069;
+    background: rgb(23, 34, 25);
+    box-shadow: 3px 5px 4px #000000a2;
 }
-
+p {
+    margin: 5px;
+    padding: 0px 10px;
+}
 h1 {
     margin: 0px;
     padding: 0px 5px;
     display: block;
 
-    color: rgb(196, 238, 169);
+    color:rgb(48, 199, 43);
     font-weight: normal;
 }
 
@@ -70,26 +81,37 @@ h3 {
 }
 
 footer {
-    margin: 10px 0px 0px;
+    margin: 0px;
     padding: 5px 0px 10px;
+    justify-self: flex-end;
     text-align: center;
-    background: rgb(13, 160, 0);
 
-    color: rgb(196, 238, 169);
+    background: rgb(0, 0, 0);
 }
 
 ul {
     display: block;
     list-style-type: disc;
-    color: rgb(196, 238, 169);
 }
 
 ul.footer-list {
+    padding: 0px;
     list-style-type: none;
 }
 
+table {
+    margin: 5px;
+    padding: 0px 10px;
+    text-emphasis: none;
+}
+
+th {
+    text-align: left;
+    font-weight: inherit;
+}
+
 a {
-    color: rgb(196, 238, 169);
+    color: inherit;
 }
 
 /* TODO organize this stuff into more files lul */

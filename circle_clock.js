@@ -55,12 +55,6 @@ function draw() {
   showSec();
 
   showDate();
-
-  // digital clock water mark
-  noStroke();
-  fill(80);
-  textSize(height * 0.04);
-  text(nf(hour(), 2) + ":" + nf(minute(), 2) + ":" + nf(second(), 2), -width * 0.485, height * 0.43);
 }
 
 

@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="Pattern_Clock" content="width=device-width, initial-scale=1.0">
-  <title>Pattern Clock</title>
+  <meta name="xRychly web" content="width=device-width, initial-scale=1.0">
+  <title>xRychlý web</title>
   <link rel="stylesheet" href="mahstyles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
   <script src="pattern_clock.js"></script>
@@ -12,17 +12,31 @@
 
 <body>
   <main>
-    <header>Jan Rychlý</header>
-    <div id="clock_canvas"></div>
-    <section>
-      <h2>Pattern Clock</h2>
-      <h3>blue - hours, yellow - minutes, red - seconds</h3>
+    <header>/* @author: Jan Rychlý */</header>
+
+    <section class="canvas-flex-container pattern-clock-container">
+      <div id="clock_canvas"></div>
+      <div class="canvas-description">
+        <h2 class="canvas-name">Pattern Clock</h2>
+        <h3 class="canvas-details">blue - hours, yellow - minutes, red - seconds</h3>
+      </div>
     </section>
-    <footer>
+
+    <section>
+      <h1>Displayed projects</h1>
       <ul>
         <li><a href="circle_clock.html">Circle Clock</a></li>
-        <li><a href="pattern_clock.html">just the Pattern Plock</a></li>
-        <li><a href="zz_experience.html" target="_blank">a flickgame about the PA215 course</a></li>
+        <li><a href="pattern_clock.html">Pattern Plock</a></li>
+        <li><a href="zz_experience.html" target="_blank">ZZ Experience I - a Flickgame about the PA215 course</a></li>
+        <li><a href="zz_experience_II.html" target="_blank">ZZ Experience II - a sequel about the PA215 course made using Twine</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <ul class="footer-list">
+        <li>this website is just a little fun project to share my work and learn web development</li>
+        <li>you can contact me at <a href="mailto:xrychly3@fi.muni.cz">xrychly3@fi.muni.cz</a></li>
+        <li>or have a look at my <a href="https://github.com/honzaflash" target="_blank">GitHub</li>
       </ul>
     </footer>
   </main>

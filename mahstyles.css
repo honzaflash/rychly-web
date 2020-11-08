@@ -12,6 +12,8 @@ main {
     padding: 0px;
     display: flex;
     width: min-content;
+    min-height: auto;
+    /* make it so that the footer is always at the bottom */
     flex-direction: column;
     justify-content: center;
 

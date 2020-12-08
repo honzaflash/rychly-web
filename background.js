@@ -2,9 +2,21 @@
 const bgCanvas = (p) => {
     p.lineCount = 150;
     p.fieldRes = 0.001;
-    // let gridCols;
-    // let gridRows;
-    // let forceField = [];
+
+    p.scrollSens = 0.0008;
+
+    // little object for a "floaty" scroll position
+    p.scrollFloat = {
+        pos: 0,
+        acc: 0,
+        speed: 0,
+        update: () => {
+            p.scrollFloat.acc = window.scrollY - p.scrollFloat.pos;
+            p.scrollFloat.speed += p.scrollFloat.acc * 0.1;
+            p.scrollFloat.pos += p.scrollFloat.speed;
+            p.scrollFloat.speed *= 0.2;
+        }
+    }
 
     p.setup = () => {
         p.canvas = p.createCanvas(document.body.scrollWidth, document.body.scrollHeight);
@@ -15,18 +27,14 @@ const bgCanvas = (p) => {
 
         p.colorMode(HSB, 360, 100, 100, 100);
         p.frameRate(30);
-
-        // gridCols = Math.floor(width / fieldRes);
-        // gridRows = Math.floor(height / fieldRes);
-        // for (let y = 0; y < gridRows; y++ ) {
-        //     for (let x = 0; x < gridCols; x++) {
-        //         forceField[y * gridCols + x] = map(y, 0, gridRows, 0, TWO_PI);
-        //     }
-        // }
     }
 
+    // the p5 draw loop
     p.draw = () => {
+        // TODO make it not redraw everythin when the bg is not changing
         p.background(8);
+
+        p.scrollFloat.update();
         
         p.randomSeed(42);
         for (let i = 0; i < p.lineCount; i++) {
@@ -34,39 +42,25 @@ const bgCanvas = (p) => {
             p.stroke(100, 42, 60);
             p.drawLine(p.random(-100, p.width + 300), p.random(-300, p.height + 100), 20, 50);
         }
-        // noStroke();
-        // fill(100, 30, 98);
-        // ellipseMode(CENTER);
-        // ellipse(mouseX, mouseY, width * 0.2);
     }
 
     p.windowResized = () => {
         p.resizeCanvas(document.body.scrollWidth, document.body.scrollHeight);
-        // gridCols = Math.floor(width / fieldRes);
-        // gridRows = Math.floor(height / fieldRes);
     }
 
-    // p.drawFieldDirections = () => {
-    //     for (let y = 0; y < gridRows; y++ ) {
-    //         for (let x = 0; x < gridCols; x++) {
-    //             stroke(100);
-    //             line(x * p.fieldRes,
-    //                 y * p.fieldRes, 
-    //                 8 * cos(forceField[y * gridCols + x]) + x * p.fieldRes,
-    //                 8 * sin(forceField[y * gridCols + x]) + y * p.fieldRes);
-    //         }
-    //     }
-    // }
-
-    p.drawLine = (x, y, length, inc) => {
+    // draw a curve led by perlin noise
+    p.drawLine = (x, y, vertCount, vertDist) => {
         p.noFill();
         p.beginShape();
-        for (let i = 0; i < length; i++) {
-            let angle = p.noise(x * p.fieldRes, y * p.fieldRes) * TWO_PI;
+        for (let i = 0; i < vertCount; i++) {
+            let angle = p.noise(x * p.fieldRes,
+                                y * p.fieldRes,
+                                p.scrollFloat.pos * p.scrollSens) * TWO_PI;
 
             p.curveVertex(x, y);
-            x += inc * cos(angle);
-            y += inc * sin(angle);
+            // jump in a direction given by the noise
+            x += vertDist * cos(angle);
+            y += vertDist * sin(angle);
         }
         p.endShape();
     }

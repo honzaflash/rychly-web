@@ -11,22 +11,28 @@ body {
     
     font-family: Calibri, 'Gill Sans', 'Trebuchet MS', sans-serif;
     color: rgb(173, 255, 170);
-    background: rgb(25, 59, 25);
+
+    background: rgb(32, 32, 32);
 }
 main {
     margin: 0px;
-    padding: 0px;
-    padding-bottom: auto;
+    padding: 0px 0px 10px;
+    min-width: 300px;
+    max-width: 1000px; /* ?? */
+    width: min-content;
     display: flex;
     flex-grow: 1;
     
     
-    width: min-content;
     flex-direction: column;
     justify-content: flex-start;
     align-self: center;
 
-    background: rgb(32, 34, 32);
+    background: rgb(42, 42, 42);
+    /* background: rgb(122, 202, 122); */
+}
+main.max_content {
+    width: max-content;
 }
 header {
     margin: 0px;
@@ -52,7 +58,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: right;
-    background: rgb(23, 34, 25);
+    background: rgb(34, 34, 34);
     box-shadow: 3px 5px 4px #000000a2;
 }
 p {
@@ -67,19 +73,6 @@ h1 {
     color:rgb(48, 199, 43);
     font-weight: normal;
 }
-
-h2 {
-    margin: 0px;
-    padding: 0px;
-    display: inline;
-}
-
-h3 {
-    margin: 0px;
-    padding: 0px;
-    display: inline;
-}
-
 footer {
     margin: 0px;
     padding: 5px 0px 10px;
@@ -89,11 +82,11 @@ footer {
     background: rgb(0, 0, 0);
 }
 
+
 ul {
     display: block;
     list-style-type: disc;
 }
-
 ul.footer-list {
     padding: 0px;
     list-style-type: none;
@@ -104,7 +97,6 @@ table {
     padding: 0px 10px;
     text-emphasis: none;
 }
-
 th {
     text-align: left;
     font-weight: inherit;
@@ -112,6 +104,12 @@ th {
 
 a {
     color: inherit;
+}
+
+canvas.background_canvas {
+    padding: 0;
+    margin: 0;
+    z-index: -10;
 }
 
 /* TODO organize this stuff into more files lul */

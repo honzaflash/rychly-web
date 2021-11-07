@@ -18,7 +18,7 @@
  *        2 - long lasting trails (lightest blend mode)
  *        3 - stars background
  *        4 - controll hands with mouse
- *        5 - static with all hands alligned
+ *        5 - static with all hands alligned1
  */
 
 let radius = 300;
@@ -26,7 +26,7 @@ let radius = 300;
 let userLatitude;
 let userLongitude;
 let times = SunCalc.getTimes(NaN, NaN, NaN);
-let mode = 2;
+let mode = 2; // from 0 to 4
 
 /* SETUP */
 function setup() {

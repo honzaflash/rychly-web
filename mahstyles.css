@@ -1,3 +1,5 @@
+
+
 html {
     height: 100%;
 }
@@ -10,10 +12,12 @@ body {
     flex-direction: column;
     
     font-family: Calibri, 'Gill Sans', 'Trebuchet MS', sans-serif;
+    font-size: 22px;
     color: rgb(173, 255, 170);
 
     background: rgb(32, 32, 32);
 }
+
 main {
     margin: 0px;
     padding: 0px 0px 10px;
@@ -22,7 +26,6 @@ main {
     width: min-content;
     display: flex;
     flex-grow: 1;
-    
     
     flex-direction: column;
     justify-content: flex-start;
@@ -34,6 +37,7 @@ main {
 main.max_content {
     width: max-content;
 }
+
 header {
     margin: 0px;
     padding: 0px 0px 5px 0px;
@@ -41,17 +45,19 @@ header {
     justify-content: center;
     background: rgb(0, 0, 0);
     
-    font-size: 40px;
+    font-size: 225%;
     font-weight: bold;
     font-stretch: expanded;
     color:rgb(48, 199, 43);
 }
+
 div {
     margin: 0px;
     padding: 0px;
     display: flex;
     justify-content: center;
 }
+
 section {
     margin: 10px;
     padding: 10px;
@@ -61,23 +67,42 @@ section {
     background: rgb(34, 34, 34);
     box-shadow: 3px 5px 4px #000000a2;
 }
+
 p {
     margin: 5px;
     padding: 0px 10px;
 }
-h1 {
+
+h1, h2, h3, h4 {
     margin: 0px;
-    padding: 0px 5px;
+    padding: 0px 0.15em;
     display: block;
 
     color:rgb(48, 199, 43);
     font-weight: normal;
 }
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 125%;
+}
+h4 {
+    margin-top: 0.25em;
+    padding: 0;
+    color: inherit;
+    font-size: 100%;
+}
+
 footer {
     margin: 0px;
     padding: 5px 0px 10px;
     justify-self: flex-end;
     text-align: center;
+    font-size: 80%;
 
     background: rgb(0, 0, 0);
 }
@@ -87,6 +112,7 @@ ul {
     display: block;
     list-style-type: disc;
 }
+
 ul.footer-list {
     padding: 0px;
     list-style-type: none;
@@ -103,7 +129,10 @@ th {
 }
 
 a {
-    color: inherit;
+    color: rgb(74, 221, 135);
+}
+a:hover {
+    color: rgb(128, 255, 181);
 }
 
 canvas.background_canvas {
@@ -142,3 +171,4 @@ canvas.background_canvas {
     color: rgb(107, 118, 143);
     font-weight: lighter;
 }
+

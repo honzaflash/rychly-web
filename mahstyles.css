@@ -48,7 +48,7 @@ header {
     font-size: 225%;
     font-weight: bold;
     font-stretch: expanded;
-    color:rgb(48, 199, 43);
+    color:rgb(48, 233, 41);
 }
 
 div {
@@ -78,7 +78,7 @@ h1, h2, h3, h4 {
     padding: 0px 0.15em;
     display: block;
 
-    color:rgb(48, 199, 43);
+    color:rgb(51, 238, 44);
     font-weight: normal;
 }
 h1 {
@@ -111,6 +111,11 @@ footer {
 ul {
     display: block;
     list-style-type: disc;
+}
+
+ul > li {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
 }
 
 ul.footer-list {

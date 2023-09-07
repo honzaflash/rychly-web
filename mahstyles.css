@@ -19,8 +19,8 @@ body {
 }
 
 main {
-    margin: 0px;
-    padding: 0px 0px 10px;
+    margin: 20px 0px 0px;
+    padding: 5px 5px 30px;
     min-width: 300px;
     max-width: 1000px; /* ?? */
     width: min-content;
@@ -31,11 +31,15 @@ main {
     justify-content: flex-start;
     align-self: center;
 
-    background: rgb(42, 42, 42);
+    background: rgb(39, 41, 40);
     /* background: rgb(122, 202, 122); */
 }
 main.max_content {
     width: max-content;
+}
+
+header, footer {
+    background-color: rgb(9, 9, 9);
 }
 
 header {
@@ -43,12 +47,23 @@ header {
     padding: 0px 0px 5px 0px;
     display: flex;
     justify-content: center;
-    background: rgb(0, 0, 0);
-    
+    position: sticky;
+    top: 0;
+}
+header > h1 {
     font-size: 225%;
     font-weight: bold;
     font-stretch: expanded;
     color:rgb(48, 233, 41);
+
+}
+
+footer {
+    margin: 0px;
+    padding: 5px 0px 10px;
+    justify-self: flex-end;
+    text-align: center;
+    font-size: 80%;
 }
 
 div {
@@ -64,7 +79,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: right;
-    background: rgb(34, 34, 34);
+    background: rgb(20, 22, 21);
     box-shadow: 3px 5px 4px #000000a2;
 }
 
@@ -77,7 +92,8 @@ h1, h2, h3, h4 {
     margin: 0px;
     padding: 0px 0.15em;
     display: block;
-
+    
+    font-family: 'Consolas', monospace;
     color:rgb(51, 238, 44);
     font-weight: normal;
 }
@@ -95,16 +111,6 @@ h4 {
     padding: 0;
     color: inherit;
     font-size: 100%;
-}
-
-footer {
-    margin: 0px;
-    padding: 5px 0px 10px;
-    justify-self: flex-end;
-    text-align: center;
-    font-size: 80%;
-
-    background: rgb(0, 0, 0);
 }
 
 

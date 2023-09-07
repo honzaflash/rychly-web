@@ -32,7 +32,7 @@ const bgCanvas = (p) => {
     // the p5 draw loop
     p.draw = () => {
         // TODO make it not redraw everythin when the bg is not changing
-        p.background(8);
+        p.background(5);
 
         p.scrollFloat.update();
         

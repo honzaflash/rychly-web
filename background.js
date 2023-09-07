@@ -1,19 +1,26 @@
-
+/**
+ * Flow field background using p5js
+ * */
 const bgCanvas = (p) => {
     p.lineCount = 150;
     p.fieldRes = 0.001;
 
     p.scrollSens = 0.0008;
 
-    // little object for a "floaty" scroll position
+    // little object for a smooth floaty position that follows the scroll position
+    // this is used to change the flow field
     p.scrollFloat = {
-        pos: 0,
-        acc: 0,
-        speed: 0,
+        prevPos: 0,
+        // initial position and speed are set to create a little motion upon loading the page
+        pos: 50,
+        speed: -250,
         update: () => {
-            p.scrollFloat.acc = window.scrollY - p.scrollFloat.pos;
-            p.scrollFloat.speed += p.scrollFloat.acc * 0.1;
+            p.prevPos = p.pos
+            const accerelation = window.scrollY - p.scrollFloat.pos;
+            // increase speed every frame based on how much `pos` is behind the scroll
+            p.scrollFloat.speed += accerelation * 0.1;
             p.scrollFloat.pos += p.scrollFloat.speed;
+            // decrease speed every frame to simulate friction
             p.scrollFloat.speed *= 0.2;
         }
     }
@@ -31,11 +38,12 @@ const bgCanvas = (p) => {
 
     // the p5 draw loop
     p.draw = () => {
-        // TODO make it not redraw everythin when the bg is not changing
+        p.scrollFloat.update();
+        // skip redrawing if the background is still
+        if (p.scrollFloat.pos == p.scrollFloat.prevPos) return
+
         p.background(5);
 
-        p.scrollFloat.update();
-        
         p.randomSeed(42);
         for (let i = 0; i < p.lineCount; i++) {
             p.strokeWeight(2);
@@ -69,7 +77,6 @@ const bgCanvas = (p) => {
 let bgP5 = new p5(bgCanvas);
 
 // making sure that the canvas resizes when the body does
-// (without the window being resized) like when elements are being added in
 const observer = new MutationObserver(() => {
     bgP5.resizeCanvas(document.body.scrollWidth, document.body.scrollHeight);
     console.log('hey body changes');
